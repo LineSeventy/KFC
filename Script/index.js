@@ -101,7 +101,6 @@ let system = () => {
 
     const createTotal = () => {
         const total = document.createElement("div");
-
         total.classList.add("total");
 
         const totalPrice = document.createElement("div");
@@ -133,7 +132,7 @@ let system = () => {
             modal.classList.add('modal');
             modalContent.classList.add('modal-content');
             closeButton.classList.add('close-button');
-            closeButton.textContent = '×';
+            closeButton.textContent = 'x';
             
             modal.appendChild(closeButton);
             modal.appendChild(modalContent);
@@ -169,7 +168,7 @@ let system = () => {
         }
     }
     
-    const initializeSystem = () => {
+    const initialize = () => {
         const itemContainer = document.createElement("div");
         itemContainer.classList.add("new");
     
@@ -183,7 +182,7 @@ let system = () => {
     };
 
     createClear();
-    initializeSystem();
+    initialize();
     const showCartBtn = document.querySelector(".cartBtn");
     showCartBtn.addEventListener("click", openModal);
 };
