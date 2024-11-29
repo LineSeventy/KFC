@@ -1,60 +1,57 @@
 "use strict";
 
-
 let system = () => {
-        const items = [
-            { name: "8-PC Bucket Meal", img: "./Img/BMEAL2.jpg", price: "P805" },
-            { name: "Twister Combo", img: "./Img/TWISTERCBO.jpg", price: "P170" },
-            { name: "Famous Bowl Meal", img: "./Img/FAMBOWLCBO.jpg", price: "P300" },
-            { name: "Bucket of 10", img: "./Img/BUCK10.jpg", price: "P400" },
-            { name: "Zinger Combo", img: "./Img/SIGSWCBO.jpg", price: "P500" },
-            { name: "2-PC Fully Loaded Meal", img: "./Img/2PCFLBOXCBO.jpg", price: "P600" },
-            { name: "Ala King Zinger Steak Meal With Buttered Corn", img: "./Img/AKZSMBCORNCBO.jpg", price: "P700" },
-            { name: "Creamy Iced Coffee", img: "./Img/CREAMICEDCOFFEE.jpg", price: "P800" },
-            { name: "Large Shots Combo", img: "./Img/SHOTS-LCBO.jpg", price: "P900" },
-            { name: "Zinger Sandwich Fully Loaded Meal", img: "./Img/ZNGRSNDWCHFLM.jpg", price: "P1000" },
-            { name: "Smoky BBQ Zinger Ala Carte", img: "./Img/SBBQZINGER.jpg", price: "P1100" },
-            { name: "Smokey BBQ Zinger Combo", img: "./Img/SBBQZINGERCBO.jpg", price: "P1200" },
-            { name: "Coffee float", img: "./Img/CFFEEFLOAT.jpg", price: "P1300" },
-            { name: "Zinger stacker", img: "./Img/ZSTACKER.jpg", price: "P1400" },
-            { name: "Zinger stacker combo", img: "./Img/ZSTACKERCBO.jpg", price: "P1500" },
-            { name: "Holiday Brownie Box", img: "./Img/HOLBRWNYBOX.jpg", price: "P1600" },
-            { name: "Bucket of 8pcs chicken + side", img: "./Img/HEHE.jpg", price: "P1700" },
-            { name: "Bucket of chicken & Steak + Side", img: "./Img/hihi.jpg", price: "P1800" },
-            { name: "Bucket of shots + side", img: "./Img/hoho.jpg", price: "P1900" },
-            { name: "Bucket of nuggets + side", img: "./Img/hahahaha.jpg", price: "P2000" },
-        ];
+    const items = [
+        { name: "8-PC Bucket Meal", img: "./Img/BMEAL2.jpg", price: "P805" },
+        { name: "Twister Combo", img: "./Img/TWISTERCBO.jpg", price: "P170" },
+        { name: "Famous Bowl Meal", img: "./Img/FAMBOWLCBO.jpg", price: "P300" },
+        { name: "Bucket of 10", img: "./Img/BUCK10.jpg", price: "P400" },
+        { name: "Zinger Combo", img: "./Img/SIGSWCBO.jpg", price: "P500" },
+        { name: "2-PC Fully Loaded Meal", img: "./Img/2PCFLBOXCBO.jpg", price: "P600" },
+        { name: "Ala King Zinger Steak Meal With Buttered Corn", img: "./Img/AKZSMBCORNCBO.jpg", price: "P700" },
+        { name: "Creamy Iced Coffee", img: "./Img/CREAMICEDCOFFEE.jpg", price: "P800" },
+        { name: "Large Shots Combo", img: "./Img/SHOTS-LCBO.jpg", price: "P900" },
+        { name: "Zinger Sandwich Fully Loaded Meal", img: "./Img/ZNGRSNDWCHFLM.jpg", price: "P1000" },
+        { name: "Smoky BBQ Zinger Ala Carte", img: "./Img/SBBQZINGER.jpg", price: "P1100" },
+        { name: "Smokey BBQ Zinger Combo", img: "./Img/SBBQZINGERCBO.jpg", price: "P1200" },
+        { name: "Coffee float", img: "./Img/CFFEEFLOAT.jpg", price: "P1300" },
+        { name: "Zinger stacker", img: "./Img/ZSTACKER.jpg", price: "P1400" },
+        { name: "Zinger stacker combo", img: "./Img/ZSTACKERCBO.jpg", price: "P1500" },
+        { name: "Holiday Brownie Box", img: "./Img/HOLBRWNYBOX.jpg", price: "P1600" },
+        { name: "Bucket of 8pcs chicken + side", img: "./Img/HEHE.jpg", price: "P1700" },
+        { name: "Bucket of chicken & Steak + Side", img: "./Img/hihi.jpg", price: "P1800" },
+        { name: "Bucket of shots + side", img: "./Img/hoho.jpg", price: "P1900" },
+        { name: "Bucket of nuggets + side", img: "./Img/hahahaha.jpg", price: "P2000" },
+    ];
 
-        let totalAmount = 0;
-        let modal = null;  
+    let totalAmount = 0;
+    let modal;  
 
-        const createCard = (item) => {
-            const card = document.createElement("div");
-            card.id = "card";
-            card.setAttribute("data-name", item.name);
-        
-            const img = document.createElement("img");
-            img.src = item.img;
-            img.alt = item.name;
-        
-            const text = document.createTextNode(item.name);
-        
+    const createCard = (item) => {
+        const card = document.createElement("div");
+        card.id = "card";
+        card.setAttribute("data-name", item.name);
     
-            const price = document.createElement("p");
-            price.textContent = item.price;
-        
-            const button = createAddButton(item);
-        
-            card.appendChild(img);
-            card.appendChild(text);
-            card.appendChild(price);  
-            card.appendChild(button);
-        
-            return card;
-        };
-        
-   
- const createAddButton = (item) => {
+        const img = document.createElement("img");
+        img.src = item.img;
+        img.alt = item.name;
+    
+        const text = document.createTextNode(item.name);
+    
+        const price = document.createElement("p");
+        price.textContent = item.price;
+    
+        const button = createAddButton(item);
+    
+        card.appendChild(img);
+        card.appendChild(text);
+        card.appendChild(price);  
+        card.appendChild(button);
+    
+        return card;
+    };
+    
+    const createAddButton = (item) => {
         const button = document.createElement("button");
         button.classList.add("addBtn");
         button.textContent = "Add to Order";
@@ -66,7 +63,11 @@ let system = () => {
         return button;
     };
 
-const addItemToOrder = (item) => {
+    const addItemToOrder = (item) => {
+        if (!document.getElementById("receipt")) {
+            showCart(); 
+        }
+
         const orderDisplay = document.createElement("div");
         orderDisplay.classList.add("orderDetails");
 
@@ -79,16 +80,17 @@ const addItemToOrder = (item) => {
         orderDisplay.appendChild(name);
         orderDisplay.appendChild(orderValue);
 
-        let receipt = document.getElementById("receipt")
+        let receipt = document.getElementById("receipt");
         receipt.appendChild(orderDisplay);
 
-        const orderNumeric = parseFloat(item.price.replace("P", "").replace(",", ""));
+        const orderNumeric = parseFloat(item.price.replace("P", "").replace(/,/g, ""));
         totalAmount += orderNumeric;
         updateTotalDisplay();
     };
 
     const updateTotalDisplay = () => {
-        document.getElementById("total").textContent = `Total: P${totalAmount.toFixed(2)}`;
+        const totalElement = document.getElementById("total");
+        totalElement.textContent = `Total: P${totalAmount.toFixed(2)}`;
     };
 
     const clearOrder = () => {
@@ -106,12 +108,10 @@ const addItemToOrder = (item) => {
         totalPrice.id = "total";
         totalPrice.textContent = "Total: P0";
         
-
         total.appendChild(totalPrice);
-
-
         return total;
     };
+
     const createClear = () => {
         const clearParent = document.querySelector(".containerClearShow");
         const clearBtn = document.createElement("button");
@@ -120,11 +120,9 @@ const addItemToOrder = (item) => {
 
         clearBtn.addEventListener("click", clearOrder);
         clearParent.appendChild(clearBtn);
-    }
- 
+    };
 
     const showCart = () => {
-
         if (!modal) {
             const modalOverlay = document.createElement('div');
             modal = document.createElement('div');
@@ -150,8 +148,7 @@ const addItemToOrder = (item) => {
                 }
             });
             
-
-            const total= createTotal();
+            const total = createTotal();
             const receipt = document.createElement("div");
             receipt.id = "receipt";
     
@@ -184,14 +181,11 @@ const addItemToOrder = (item) => {
         const container = document.querySelector(".container");
         container.appendChild(itemContainer);
     };
-    
 
     createClear();
     initializeSystem();
     const showCartBtn = document.querySelector(".cartBtn");
     showCartBtn.addEventListener("click", openModal);
-    
 };
 
 system();
-
