@@ -1,56 +1,75 @@
 :root{
-
+    --main-color: red;
+    --button-radius: 1em;
 }
 
 body {
     padding: 0;
     margin: 0;
-
+    font-family: Arial, sans-serif;
 }
 
-header{
-    color: red;
-    font-size: xx-large;
+header {
+    color: var(--main-color);
+    font-size: 2rem;
     font-style: italic;
     box-shadow: 0px 5px 5px black;
+    position: sticky;
+    top: 0; 
+    background-color: white; 
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    justify-content: space-between;
+}
+
+header button {
+    margin-right: 2rem;
 }
 header h1 {
-    margin-left: 50px;
-
+    margin-left: 2rem;
 }
  * {
   box-sizing: border-box;   
 }
 .container{
     height: 100vh;
-    /* background-color: white; */
-
-  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
 
 .addBtn {
-    padding: 30px;
-
-    background-color: red;
-    border-radius: 10px;
+    padding: 1.5rem;
+    background-color: var(--main-color);
+    border-radius: var(--button-radius);
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
 }
 
 .new {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 50px;
-    margin: 50px;
+    gap: 2rem;
+    width: 100%;
+
 }
 #card {
-    width: 350px;
-    height: 300px;
-
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: 7 / 6; 
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    font-size: x-large;
+    font-size: 1.25rem;
     box-shadow: 1px 1px 5px black;
 }
 #receipt{
@@ -77,5 +96,64 @@ header h1 {
 
 #card img {
     width: 100%;
-    height: 200px;
+    height: auto;
+    max-height: 200px;
+}
+
+
+.containerClearShow button {
+    padding: 1rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: red;
+    color: white;
+}
+
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    max-width: 90%;
+    position: relative;
+}
+
+
+.modal-content {
+    margin-bottom: 20px;
+}
+
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
