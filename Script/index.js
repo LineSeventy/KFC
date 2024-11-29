@@ -110,7 +110,7 @@ const addItemToOrder = (item) => {
         const clearParent = document.querySelector(".containerClearShow");
         const clearBtn = document.createElement("button");
         clearBtn.id = "clearBtn";
-        clearBtn.textContent = "Clear";
+        clearBtn.textContent = "Clear Order";
 
         clearBtn.addEventListener("click", clearOrder);
         clearParent.appendChild(clearBtn);
