@@ -26,6 +26,7 @@ let system = () => {
         ];
 
         let totalAmount = 0;
+        let modal = null;  
 
     const createCard = (item) => {
             const card = document.createElement("div");
@@ -114,7 +115,7 @@ const addItemToOrder = (item) => {
         clearBtn.addEventListener("click", clearOrder);
         clearParent.appendChild(clearBtn);
     }
-    let modal;  
+ 
 
     const showCart = () => {
 
@@ -186,5 +187,5 @@ const addItemToOrder = (item) => {
     
 };
 
-    system();
+system();
 

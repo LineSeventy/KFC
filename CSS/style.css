@@ -7,13 +7,15 @@ body {
     padding: 0;
     margin: 0;
     font-family: Arial, sans-serif;
+
+
 }
 
 header {
     color: var(--main-color);
     font-size: 2rem;
     font-style: italic;
-    box-shadow: 0px 5px 5px black;
+    box-shadow: 0px 1px 10px black;
     position: sticky;
     top: 0; 
     background-color: white; 
@@ -22,6 +24,7 @@ header {
     align-items: center;
     height: 5rem;
     justify-content: space-between;
+
 }
 
 header button {
@@ -40,8 +43,13 @@ header h1 {
     align-items: center;
     margin-left: 2rem;
     margin-right: 2rem;
-}
+    backdrop-filter: blur(2px);
+    overflow: scroll;
 
+}
+.container h1{
+    color: white;
+}
 .addBtn {
     padding: 1.5rem;
     background-color: var(--main-color);
@@ -71,6 +79,7 @@ header h1 {
     justify-content: center;
     font-size: 1.25rem;
     box-shadow: 1px 1px 5px black;
+    background-color: white;
 }
 #receipt{
     grid-column:  span 1/6;
@@ -134,14 +143,23 @@ header h1 {
 
 .modal {
     background: white;
-    padding: 20px;
+    padding: 4rem;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 400px;
     max-width: 90%;
+    max-height: 30rem;
     position: relative;
+    overflow: scroll;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.modal-overlay.open .modal {
+    transform: translateY(0);
+    opacity: 1; 
+}
 
 .modal-content {
     margin-bottom: 20px;
@@ -156,4 +174,10 @@ header h1 {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+button:active {
+    background-color: orange; 
+    transform: scale(0.95); 
+    transition: transform 0.1s ease;
 }
