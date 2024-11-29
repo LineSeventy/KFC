@@ -28,25 +28,31 @@ let system = () => {
         let totalAmount = 0;
         let modal = null;  
 
-    const createCard = (item) => {
+        const createCard = (item) => {
             const card = document.createElement("div");
             card.id = "card";
             card.setAttribute("data-name", item.name);
-    
+        
             const img = document.createElement("img");
             img.src = item.img;
             img.alt = item.name;
-    
+        
             const text = document.createTextNode(item.name);
+        
     
+            const price = document.createElement("p");
+            price.textContent = item.price;
+        
             const button = createAddButton(item);
-    
+        
             card.appendChild(img);
             card.appendChild(text);
+            card.appendChild(price);  
             card.appendChild(button);
-    
+        
             return card;
         };
+        
    
  const createAddButton = (item) => {
         const button = document.createElement("button");

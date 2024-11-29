@@ -47,9 +47,7 @@ header h1 {
     overflow: scroll;
 
 }
-.container h1{
-    color: white;
-}
+
 .addBtn {
     padding: 1.5rem;
     background-color: var(--main-color);
@@ -70,20 +68,17 @@ header h1 {
 }
 #card {
     width: 100%;
-    max-width: 350px;
-    height: auto;
-    aspect-ratio: 7 / 6; 
+    max-width: 350px; 
+    height: 350px; 
     display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
+    flex-direction: column;
     font-size: 1.25rem;
     box-shadow: 1px 1px 5px black;
     background-color: white;
-}
-#receipt{
-    grid-column:  span 1/6;
-    grid-row: 2/6;
+    border-radius: 1rem;
+    margin: 0; /
 }
 
 .totalAndClear {
@@ -101,14 +96,17 @@ header h1 {
 #card button {
     color: white;
     border: none;
+
 }
 
 #card img {
     width: 100%;
-    height: auto;
-    max-height: 200px;
+    height: 100%; 
+    object-fit: cover; 
 }
-
+#card p{
+    font-size: medium;
+}
 
 .containerClearShow button {
     padding: 1rem;
