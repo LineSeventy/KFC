@@ -148,6 +148,7 @@ let system = () => {
             });
             
             const total = createTotal();
+            total.classList.add("total")
             const receipt = document.createElement("div");
             receipt.id = "receipt";
     

@@ -28,6 +28,7 @@ header {
 
 header button {
     margin-right: 2rem;
+    cursor: pointer;
 }
 header h1 {
     margin-left: 2rem;
@@ -90,6 +91,7 @@ header h1 {
 .totalAndClear {
     grid-column: 5/6;
     grid-row: 1/1;
+
 }
 .totalAndClear button{
  width: 200px;
@@ -99,6 +101,9 @@ header h1 {
  color: white;
 }
 
+.totalAndClear p {
+
+}
 #card button {
     color: white;
     border: none;
@@ -184,4 +189,9 @@ button:active {
     background-color: orange; 
     transform: scale(0.95); 
     transition: transform 0.1s ease;
+}
+.total{
+    color: red;
+    font-size: xx-large;
+    font-weight: bold;
 }
