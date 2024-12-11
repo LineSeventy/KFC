@@ -2,7 +2,7 @@
 
 let system = () => {
     const items = [
-        { name: "8-PC Bucket Meal", img: "./Img/BMEAL2.jpg", price: "P805" },
+        { name: "8-PC Bucket Meal", img: "./Img/BMEAL2.jpg", price: "P300" },
         { name: "Twister Combo", img: "./Img/TWISTERCBO.jpg", price: "P170" },
         { name: "Famous Bowl Meal", img: "./Img/FAMBOWLCBO.jpg", price: "P95" },
         { name: "Bucket of 10", img: "./Img/BUCK10.jpg", price: "P400" },
